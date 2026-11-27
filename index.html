@@ -10,13 +10,12 @@
 
   <style>
     :root {
-      /* لوحة الألوان: أبيض سائد + أزرق زجاجي شفاف */
       --bg-white: #ffffff;
       --blue-deep: #124e8c;
       --blue-glass-accent: #2276cc;
-      --blue-glass-fill: linear-gradient(145deg, rgba(235, 246, 255, 0.78), rgba(196, 226, 255, 0.42));
-      --blue-glass-card: linear-gradient(145deg, rgba(242, 249, 255, 0.82), rgba(212, 234, 255, 0.45));
-      --glass-border: rgba(255, 255, 255, 0.95);
+      --blue-glass-fill: linear-gradient(145deg, rgba(235, 246, 255, 0.82), rgba(196, 226, 255, 0.45));
+      --blue-glass-card: linear-gradient(145deg, rgba(242, 249, 255, 0.85), rgba(212, 234, 255, 0.48));
+      --glass-border: rgba(255, 255, 255, 0.96);
       --glass-blue-edge: rgba(34, 118, 204, 0.22);
       --text-dark: #0e2439;
       --text-muted: #46627d;
@@ -41,7 +40,7 @@
       position: relative;
     }
 
-    /* إضاءات خلفية زرقاء ناعمة لإبراز انعكاس الزجاج الشفاف فوق الأبيض */
+    /* إضاءات خلفية زرقاء ناعمة لإبراز انعكاس الزجاج فوق الأبيض */
     .ambient-bg {
       position: fixed;
       inset: 0;
@@ -69,7 +68,7 @@
       width: 340px;
       height: 340px;
       background: rgba(24, 119, 214, 0.13);
-      top: 32%;
+      top: 34%;
       left: 6%;
     }
 
@@ -81,22 +80,22 @@
       right: 15%;
     }
 
-    /* ================= شريط التنقل الزجاجي ================= */
+    /* ================= شريط التنقل العلوي الاحترافي ================= */
     header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(235, 246, 255, 0.72));
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.90), rgba(235, 246, 255, 0.76));
       backdrop-filter: blur(22px) saturate(190%);
       -webkit-backdrop-filter: blur(22px) saturate(190%);
       border-bottom: 1px solid var(--glass-blue-edge);
-      box-shadow: 0 4px 20px rgba(18, 78, 140, 0.05);
+      box-shadow: 0 6px 24px rgba(18, 78, 140, 0.06);
     }
 
     .nav-container {
-      max-width: 1120px;
+      max-width: 1140px;
       margin: 0 auto;
-      padding: 0.75rem 1.25rem;
+      padding: 0.7rem 1.25rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -105,65 +104,77 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 0.9rem;
       text-decoration: none;
       color: var(--text-dark);
     }
 
+    /* إبراز الشعار العلوي بحجم أكبر وإطار زجاجي فخم */
     .brand-logo-wrap {
-      width: 46px;
-      height: 46px;
-      border-radius: 14px;
-      background: var(--blue-glass-fill);
-      border: 1px solid var(--glass-border);
-      box-shadow: 0 4px 12px rgba(34, 118, 204, 0.14), inset 0 1px 1px #ffffff;
+      position: relative;
+      width: 60px;
+      height: 60px;
+      border-radius: 18px;
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(204, 232, 255, 0.62));
+      border: 1.5px solid var(--glass-border);
+      box-shadow:
+        0 8px 20px rgba(34, 118, 204, 0.18),
+        inset 0 1.5px 1px #ffffff,
+        inset 0 -1.5px 3px rgba(34, 118, 204, 0.14);
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 6px;
       overflow: hidden;
       flex-shrink: 0;
+      transition: transform 0.25s ease;
+    }
+
+    .brand:hover .brand-logo-wrap {
+      transform: scale(1.04);
     }
 
     .brand-logo-wrap img {
-      width: 85%;
-      height: 85%;
+      width: 100%;
+      height: 100%;
       object-fit: contain;
     }
 
     .brand-text strong {
       display: block;
-      font-size: 1.05rem;
+      font-size: 1.15rem;
       font-weight: 800;
       color: var(--blue-deep);
-      line-height: 1.2;
+      line-height: 1.25;
     }
 
     .brand-text span {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      font-weight: 600;
+      display: inline-block;
+      font-size: 0.8rem;
+      color: var(--blue-glass-accent);
+      font-weight: 700;
     }
 
     nav ul {
       list-style: none;
       display: flex;
       align-items: center;
-      gap: 1.75rem;
+      gap: 1.35rem;
     }
 
     nav a {
       text-decoration: none;
       color: var(--text-dark);
-      font-weight: 600;
-      font-size: 0.95rem;
-      padding: 0.35rem 0.75rem;
-      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.94rem;
+      padding: 0.42rem 0.85rem;
+      border-radius: 12px;
       transition: all 0.2s ease;
     }
 
     nav a:hover {
       color: var(--blue-glass-accent);
-      background: rgba(34, 118, 204, 0.08);
+      background: rgba(34, 118, 204, 0.09);
     }
 
     .menu-toggle {
@@ -171,9 +182,9 @@
       background: var(--blue-glass-fill);
       border: 1px solid var(--glass-blue-edge);
       color: var(--blue-deep);
-      width: 42px;
-      height: 42px;
-      border-radius: 12px;
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
       font-size: 1.3rem;
       cursor: pointer;
       align-items: center;
@@ -181,93 +192,59 @@
       box-shadow: 0 4px 12px rgba(34, 118, 204, 0.10);
     }
 
-    /* ================= الواجهة الرئيسية (Hero) ================= */
+    /* ================= الواجهة الرئيسية (بدون شعار متكرر + علامة مائية خفيفة) ================= */
     .hero {
       position: relative;
-      padding: 4.5rem 1.25rem 4rem;
+      padding: 4.2rem 1.25rem 3.5rem;
       text-align: center;
+      overflow: hidden;
+    }
+
+    /* علامة مائية شفافة للشعار في خلفية الواجهة */
+    .hero-watermark {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 340px;
+      height: 340px;
+      object-fit: contain;
+      opacity: 0.045;
+      pointer-events: none;
+      z-index: 0;
+      filter: grayscale(20%);
     }
 
     .hero-inner {
-      max-width: 780px;
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
 
-    /* إطار الشعار الزجاجي الأزرق */
-    .hero-logo-card {
-      position: relative;
-      width: 162px;
-      height: 162px;
-      border-radius: 36px;
-      background: linear-gradient(145deg, rgba(255, 255, 255, 0.90), rgba(204, 231, 255, 0.52));
-      backdrop-filter: blur(24px) saturate(190%);
-      -webkit-backdrop-filter: blur(24px) saturate(190%);
-      border: 1.5px solid var(--glass-border);
-      box-shadow:
-        0 20px 45px rgba(34, 118, 204, 0.16),
-        0 4px 12px rgba(18, 78, 140, 0.06),
-        inset 0 2px 2px rgba(255, 255, 255, 1),
-        inset 0 -2px 6px rgba(34, 118, 204, 0.12);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 16px;
-      margin-bottom: 1.65rem;
-    }
-
-    .hero-logo-card::before {
-      content: "";
-      position: absolute;
-      top: 4px;
-      left: 10px;
-      right: 10px;
-      height: 42%;
-      border-radius: 28px 28px 14px 14px;
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0));
-      pointer-events: none;
-    }
-
-    .hero-logo-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      position: relative;
-      z-index: 1;
-    }
-
-    .logo-fallback {
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      color: var(--blue-deep);
-      font-weight: 800;
-      font-size: 0.9rem;
-    }
-
     .badge-pill {
       display: inline-block;
-      padding: 0.35rem 1.15rem;
+      padding: 0.38rem 1.2rem;
       border-radius: 999px;
-      background: linear-gradient(135deg, rgba(226, 242, 255, 0.85), rgba(196, 226, 255, 0.55));
+      background: linear-gradient(135deg, rgba(226, 242, 255, 0.88), rgba(196, 226, 255, 0.58));
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       border: 1px solid var(--glass-border);
-      box-shadow: 0 4px 14px rgba(34, 118, 204, 0.10);
+      box-shadow: 0 4px 14px rgba(34, 118, 204, 0.11);
       color: var(--blue-deep);
-      font-size: 0.85rem;
+      font-size: 0.86rem;
       font-weight: 700;
-      margin-bottom: 0.9rem;
+      margin-bottom: 1rem;
     }
 
     .hero h1 {
-      font-size: clamp(1.75rem, 4vw, 2.55rem);
+      font-size: clamp(1.85rem, 4.2vw, 2.7rem);
       font-weight: 800;
       color: var(--text-dark);
-      margin-bottom: 1.1rem;
+      margin-bottom: 1.2rem;
       line-height: 1.3;
     }
 
@@ -277,28 +254,28 @@
 
     /* بطاقة الكلمة التعريفية الزجاجية */
     .intro-box {
-      background: linear-gradient(145deg, rgba(244, 250, 255, 0.85), rgba(214, 236, 255, 0.45));
+      background: linear-gradient(145deg, rgba(244, 250, 255, 0.86), rgba(214, 236, 255, 0.48));
       backdrop-filter: blur(18px) saturate(180%);
       -webkit-backdrop-filter: blur(18px) saturate(180%);
-      border: 1px solid var(--glass-border);
+      border: 1.2px solid var(--glass-border);
       box-shadow:
-        0 12px 32px rgba(34, 118, 204, 0.09),
+        0 14px 34px rgba(34, 118, 204, 0.10),
         inset 0 1.5px 1px rgba(255, 255, 255, 1);
       border-radius: 24px;
-      padding: 1.4rem 1.7rem;
+      padding: 1.5rem 1.8rem;
       margin-bottom: 2.1rem;
     }
 
     .intro-box p {
       color: var(--text-muted);
-      font-size: 1.03rem;
+      font-size: 1.05rem;
     }
 
     .intro-box strong {
       color: var(--blue-deep);
     }
 
-    /* ================= شريط الرابط الموحد والأيقونات الزجاجية الزرقاء (iOS Glass) ================= */
+    /* ================= شريط الرابط الموحد والأيقونات الزجاجية (iOS Glass) ================= */
     .unified-social-wrapper {
       width: 100%;
       display: flex;
@@ -313,7 +290,7 @@
       gap: 0.75rem;
       padding: 0.8rem 1.05rem;
       border-radius: 28px;
-      background: linear-gradient(135deg, rgba(226, 242, 255, 0.78), rgba(182, 220, 255, 0.46));
+      background: linear-gradient(135deg, rgba(226, 242, 255, 0.80), rgba(182, 220, 255, 0.48));
       backdrop-filter: blur(24px) saturate(200%);
       -webkit-backdrop-filter: blur(24px) saturate(200%);
       border: 1.2px solid rgba(255, 255, 255, 0.96);
@@ -324,7 +301,6 @@
         inset 0 -1px 3px rgba(34, 118, 204, 0.14);
     }
 
-    /* زر الرابط الواحد الجامع باللون الأزرق الزجاجي */
     .unified-link-btn {
       position: relative;
       display: inline-flex;
@@ -332,7 +308,7 @@
       gap: 0.55rem;
       padding: 0.68rem 1.25rem;
       border-radius: 17px;
-      background: linear-gradient(145deg, rgba(38, 130, 224, 0.88), rgba(18, 86, 160, 0.94));
+      background: linear-gradient(145deg, rgba(38, 130, 224, 0.90), rgba(18, 86, 160, 0.95));
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       color: #ffffff;
@@ -367,7 +343,6 @@
       gap: 0.65rem;
     }
 
-    /* أيقونات الآيفون الزجاجية الزرقاء الشفافة */
     .ios-glass-icon {
       position: relative;
       width: 50px;
@@ -389,7 +364,6 @@
       transition: transform 0.24s cubic-bezier(0.22, 1, 0.36, 1), background 0.24s ease, color 0.24s ease, box-shadow 0.24s ease;
     }
 
-    /* انعكاس اللمعة الزجاجية العلوية للأيقونة */
     .ios-glass-icon::before {
       content: "";
       position: absolute;
@@ -407,7 +381,6 @@
       height: 22px;
       position: relative;
       z-index: 1;
-      transition: transform 0.22s ease;
     }
 
     .ios-glass-icon:hover {
@@ -424,23 +397,23 @@
       background: linear-gradient(180deg, rgba(255, 255, 255, 0.42), rgba(255, 255, 255, 0));
     }
 
-    /* ================= الأقسام التعريفية والبطاقات الزجاجية ================= */
+    /* ================= الأقسام العامة ================= */
     section.content-section {
-      max-width: 1120px;
+      max-width: 1140px;
       margin: 0 auto;
-      padding: 4rem 1.25rem;
+      padding: 3.5rem 1.25rem;
     }
 
     .section-header {
       text-align: center;
-      margin-bottom: 2.5rem;
+      margin-bottom: 2.2rem;
     }
 
     .section-header h2 {
       font-size: 1.75rem;
       font-weight: 800;
       color: var(--blue-deep);
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.35rem;
     }
 
     .section-header p {
@@ -477,10 +450,9 @@
     }
 
     .card-glass-badge {
-      position: relative;
-      width: 54px;
-      height: 54px;
-      border-radius: 17px;
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
       background: linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(196, 228, 255, 0.55));
       border: 1px solid rgba(255, 255, 255, 0.98);
       box-shadow:
@@ -490,14 +462,14 @@
       align-items: center;
       justify-content: center;
       color: var(--blue-glass-accent);
-      margin-bottom: 1.15rem;
+      margin-bottom: 1.1rem;
     }
 
     .glass-card h3 {
-      font-size: 1.2rem;
+      font-size: 1.18rem;
       font-weight: 700;
       color: var(--blue-deep);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.45rem;
     }
 
     .glass-card p {
@@ -505,7 +477,221 @@
       font-size: 0.95rem;
     }
 
-    /* ================= التذييل (Footer) ================= */
+    /* ================= معرض صور فعاليات اللجان ================= */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.65rem;
+      margin-bottom: 2.2rem;
+    }
+
+    .filter-btn {
+      padding: 0.55rem 1.15rem;
+      border-radius: 15px;
+      border: 1.2px solid var(--glass-border);
+      background: linear-gradient(145deg, rgba(242, 249, 255, 0.88), rgba(204, 231, 255, 0.50));
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 6px 16px rgba(34, 118, 204, 0.09), inset 0 1px 1px #ffffff;
+      color: var(--blue-deep);
+      font-family: 'Cairo', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.22s ease;
+    }
+
+    .filter-btn:hover {
+      transform: translateY(-2px);
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(214, 236, 255, 0.72));
+    }
+
+    .filter-btn.active {
+      background: linear-gradient(145deg, rgba(38, 130, 224, 0.92), rgba(18, 86, 160, 0.96));
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.65);
+      box-shadow: 0 8px 20px rgba(34, 118, 204, 0.28), inset 0 1px 1px rgba(255, 255, 255, 0.45);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .event-photo-card {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      background: var(--blue-glass-card);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1.5px solid var(--glass-border);
+      box-shadow:
+        0 12px 30px rgba(34, 118, 204, 0.10),
+        inset 0 1.5px 1px rgba(255, 255, 255, 1);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .event-photo-card.hidden {
+      display: none;
+    }
+
+    .event-photo-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 38px rgba(34, 118, 204, 0.16);
+    }
+
+    .photo-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      background: linear-gradient(145deg, #e8f3fc, #f6faff);
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.35s ease;
+    }
+
+    .event-photo-card:hover .photo-frame img {
+      transform: scale(1.04);
+    }
+
+    /* شارة اسم اللجنة الزجاجية فوق الصورة */
+    .committee-tag {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      z-index: 2;
+      padding: 0.28rem 0.85rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.84);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.98);
+      box-shadow: 0 4px 12px rgba(18, 78, 140, 0.14);
+      color: var(--blue-deep);
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    /* صندوق بديل أنيق يظهر قبل رفع الصورة يوضح اسم الملف المطلوب */
+    .photo-placeholder {
+      display: none;
+      width: 100%;
+      height: 100%;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      text-align: center;
+      color: var(--blue-deep);
+      gap: 0.35rem;
+    }
+
+    .photo-placeholder code {
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid var(--glass-blue-edge);
+      padding: 0.15rem 0.65rem;
+      border-radius: 8px;
+      font-family: monospace;
+      font-size: 0.85rem;
+      color: var(--blue-glass-accent);
+      direction: ltr;
+    }
+
+    .photo-caption {
+      padding: 1rem 1.25rem 1.15rem;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.75), rgba(235, 246, 255, 0.65));
+      border-top: 1px solid rgba(255, 255, 255, 0.9);
+    }
+
+    .photo-caption h3 {
+      font-size: 1.04rem;
+      font-weight: 800;
+      color: var(--blue-deep);
+      margin-bottom: 0.2rem;
+    }
+
+    .photo-caption p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    /* ================= نافذة تكبير الصور الزجاجية (Lightbox) ================= */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: rgba(14, 36, 57, 0.65);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.25rem;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox-box {
+      position: relative;
+      max-width: 860px;
+      width: 100%;
+      border-radius: 26px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1.5px solid #ffffff;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.30);
+    }
+
+    .lightbox-box img {
+      width: 100%;
+      max-height: 75vh;
+      object-fit: contain;
+      background: #f0f6fc;
+      display: block;
+    }
+
+    .lightbox-info {
+      padding: 1rem 1.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .lightbox-info h4 {
+      color: var(--blue-deep);
+      font-size: 1.05rem;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      width: 40px;
+      height: 40px;
+      border-radius: 13px;
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      background: rgba(255, 255, 255, 0.88);
+      color: var(--blue-deep);
+      font-size: 1.2rem;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    /* ================= التذييل ================= */
     footer {
       background: linear-gradient(180deg, rgba(242, 249, 255, 0.65), rgba(224, 240, 255, 0.85));
       backdrop-filter: blur(16px);
@@ -521,7 +707,7 @@
       color: var(--blue-deep);
     }
 
-    /* ================= التجاوب مع شاشات الهواتف ================= */
+    /* ================= التجاوب مع شاشات الهواتف والآيباد ================= */
     @media (max-width: 768px) {
       .menu-toggle {
         display: flex;
@@ -532,7 +718,7 @@
         top: 100%;
         right: 0;
         left: 0;
-        background: rgba(248, 252, 255, 0.96);
+        background: rgba(248, 252, 255, 0.97);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
         border-bottom: 1px solid var(--glass-blue-edge);
@@ -547,7 +733,17 @@
       nav ul {
         flex-direction: column;
         align-items: flex-start;
-        gap: 0.75rem;
+        gap: 0.65rem;
+      }
+
+      .brand-logo-wrap {
+        width: 52px;
+        height: 52px;
+        border-radius: 15px;
+      }
+
+      .brand-text strong {
+        font-size: 1.02rem;
       }
 
       .dock-divider {
@@ -568,24 +764,24 @@
 </head>
 <body>
 
-  <!-- خلفية بيضاء بإضاءة زرقاء ناعمة لإظهار الزجاج -->
+  <!-- خلفية بيضاء بإضاءة زرقاء ناعمة -->
   <div class="ambient-bg" aria-hidden="true">
     <div class="ambient-orb orb-1"></div>
     <div class="ambient-orb orb-2"></div>
     <div class="ambient-orb orb-3"></div>
   </div>
 
-  <!-- قائمة التنقل العلوية -->
+  <!-- قائمة التنقل العلوية مع الشعار البارز -->
   <header>
     <div class="nav-container">
       <a href="#home" class="brand">
         <div class="brand-logo-wrap">
           <img src="logo.png" alt="شعار فريق الهلال البريمي" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
-          <span style="display:none; font-weight:800; color:#124e8c;">الهلال</span>
+          <span style="display:none; font-weight:800; color:#124e8c; font-size:0.9rem;">الهلال</span>
         </div>
         <div class="brand-text">
           <strong>فريق الهلال البريمي</strong>
-          <span>الرياضي الثقافي</span>
+          <span>الرياضي الثقافي • ولاية البريمي</span>
         </div>
       </a>
 
@@ -595,7 +791,7 @@
         <ul>
           <li><a href="#home">الرئيسية</a></li>
           <li><a href="#about">عن الفريق</a></li>
-          <li><a href="#activities">أنشطتنا</a></li>
+          <li><a href="#gallery">فعاليات اللجان</a></li>
           <li><a href="#contact">التواصل</a></li>
         </ul>
       </nav>
@@ -604,20 +800,9 @@
 
   <!-- الصفحة الرئيسية -->
   <main id="home" class="hero">
-    <div class="hero-inner">
-      <!-- شعار الفريق -->
-      <div class="hero-logo-card">
-        <img
-          src="logo.png"
-          alt="شعار فريق الهلال البريمي الرياضي الثقافي"
-          onerror="this.style.display='none'; document.getElementById('logoFallback').style.display='flex';"
-        />
-        <div id="logoFallback" class="logo-fallback">
-          <span>شعار الفريق</span>
-          <small style="font-weight:400; color:#46627d;">logo.png</small>
-        </div>
-      </div>
+    <img src="logo.png" alt="" class="hero-watermark" aria-hidden="true" onerror="this.style.display='none';" />
 
+    <div class="hero-inner">
       <span class="badge-pill">الموقع الرسمي للفريق</span>
       <h1>فريق <span>الهلال البريمي</span> الرياضي الثقافي</h1>
 
@@ -631,7 +816,6 @@
       <!-- الرابط الواحد الجامع وبجانبه الأيقونات الزجاجية الزرقاء -->
       <div class="unified-social-wrapper" id="contact">
         <div class="ios-glass-dock">
-          <!-- الرابط الموحد -->
           <a href="https://linkjar.co/alhilal_bur" target="_blank" rel="noopener noreferrer" class="unified-link-btn">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
@@ -642,7 +826,6 @@
 
           <div class="dock-divider"></div>
 
-          <!-- أيقونات التواصل الزجاجية الزرقاء بجانب الرابط -->
           <div class="social-icons-row">
             <!-- X -->
             <a href="https://linkjar.co/o/ff0d1915-23b1-46a1-b1e0-c56d9c353f47" target="_blank" rel="noopener noreferrer" class="ios-glass-icon" aria-label="حساب X" title="X">
@@ -727,30 +910,160 @@
     </div>
   </section>
 
-  <!-- قسم الأنشطة -->
-  <section id="activities" class="content-section" style="padding-top: 1rem;">
+  <!-- قسم معرض صور فعاليات اللجان -->
+  <section id="gallery" class="content-section" style="padding-top: 1.5rem;">
     <div class="section-header">
-      <h2>مجالات وأنشطة الفريق</h2>
-      <p>برامج متنوعة تجمع بين المنافسة الرياضية والحراك الثقافي والاجتماعي</p>
+      <h2>فعاليات وأنشطة اللجان</h2>
+      <p>لقطات موثّقة من برامج ومبادرات لجان فريق الهلال البريمي</p>
     </div>
 
-    <div class="cards-grid">
-      <div class="glass-card">
-        <h3>النشاط الرياضي</h3>
-        <p>إعداد الفرق الكروية والمشاركة في البطولات المحلية والإقليمية، إلى جانب صقل مهارات الناشئين والشباب.</p>
-      </div>
+    <!-- أزرار التصفية الزجاجية حسب اللجنة -->
+    <div class="filter-bar" role="tablist" aria-label="تصفية فعاليات اللجان">
+      <button class="filter-btn active" data-filter="all">الكل</button>
+      <button class="filter-btn" data-filter="sport">اللجنة الرياضية</button>
+      <button class="filter-btn" data-filter="media">اللجنة الإعلامية</button>
+      <button class="filter-btn" data-filter="culture">اللجنة الثقافية والاجتماعية</button>
+      <button class="filter-btn" data-filter="events">لجنة الأنشطة والفعاليات</button>
+    </div>
 
-      <div class="glass-card">
-        <h3>النشاط الثقافي</h3>
-        <p>تنظيم الأمسيات الثقافية، المسابقات المعرفية، والورش التطويرية التي تعزز الوعي والإبداع لدى المنتسبين.</p>
-      </div>
+    <!-- شبكة صور اللجان -->
+    <div class="gallery-grid">
+      <!-- 1. اللجنة الرياضية -->
+      <article class="event-photo-card" data-category="sport">
+        <div class="photo-frame" onclick="openLightbox(this)">
+          <span class="committee-tag">اللجنة الرياضية</span>
+          <img src="sport1.jpg" alt="مشاركات اللجنة الرياضية" data-base="sport1" onerror="handleImgFallback(this)" />
+          <div class="photo-placeholder">
+            <span>صورة اللجنة الرياضية (1)</span>
+            <code>sport1.jpg</code>
+          </div>
+        </div>
+        <div class="photo-caption">
+          <h3>البطولات والمنافسات الكروية</h3>
+          <p>مشاركات وتدريبات الفريق الكروي في مختلف الاستحقاقات الرياضية.</p>
+        </div>
+      </article>
 
-      <div class="glass-card">
-        <h3>العمل المجتمعي</h3>
-        <p>المساهمة الفاعلة في المبادرات التطوعية والفعاليات الوطنية والاجتماعية في مختلف ربوع محافظة البريمي.</p>
-      </div>
+      <article class="event-photo-card" data-category="sport">
+        <div class="photo-frame" onclick="openLightbox(this)">
+          <span class="committee-tag">اللجنة الرياضية</span>
+          <img src="sport2.jpg" alt="صقل مواهب الناشئين" data-base="sport2" onerror="handleImgFallback(this)" />
+          <div class="photo-placeholder">
+            <span>صورة اللجنة الرياضية (2)</span>
+            <code>sport2.jpg</code>
+          </div>
+        </div>
+        <div class="photo-caption">
+          <h3>إعداد وصقل المواهب الشبابية</h3>
+          <p>برامج الإعداد البدني وتنمية مهارات الناشئين والشباب.</p>
+        </div>
+      </article>
+
+      <!-- 2. اللجنة الإعلامية -->
+      <article class="event-photo-card" data-category="media">
+        <div class="photo-frame" onclick="openLightbox(this)">
+          <span class="committee-tag">اللجنة الإعلامية</span>
+          <img src="media1.jpg" alt="التغطية الإعلامية" data-base="media1" onerror="handleImgFallback(this)" />
+          <div class="photo-placeholder">
+            <span>صورة اللجنة الإعلامية (1)</span>
+            <code>media1.jpg</code>
+          </div>
+        </div>
+        <div class="photo-caption">
+          <h3>التغطية الميدانية والتوثيق</h3>
+          <p>رصد وتوثيق مباريات الفريق وفعالياته عبر المنصات الرقمية.</p>
+        </div>
+      </article>
+
+      <article class="event-photo-card" data-category="media">
+        <div class="photo-frame" onclick="openLightbox(this)">
+          <span class="committee-tag">اللجنة الإعلامية</span>
+          <img src="media2.jpg" alt="الإنتاج المرئي والتصميم" data-base="media2" onerror="handleImgFallback(this)" />
+          <div class="photo-placeholder">
+            <span>صورة اللجنة الإعلامية (2)</span>
+            <code>media2.jpg</code>
+          </div>
+        </div>
+        <div class="photo-caption">
+          <h3>الإنتاج المرئي والهوية الرقمية</h3>
+          <p>تصميم المحتوى الإعلامي وإبراز إنجازات الفريق للجمهور.</p>
+        </div>
+      </article>
+
+      <!-- 3. اللجنة الثقافية والاجتماعية -->
+      <article class="event-photo-card" data-category="culture">
+        <div class="photo-frame" onclick="openLightbox(this)">
+          <span class="committee-tag">اللجنة الثقافية والاجتماعية</span>
+          <img src="culture1.jpg" alt="المسابقات والأمسيات الثقافية" data-base="culture1" onerror="handleImgFallback(this)" />
+          <div class="photo-placeholder">
+            <span>صورة اللجنة الثقافية والاجتماعية (1)</span>
+            <code>culture1.jpg</code>
+          </div>
+        </div>
+        <div class="photo-caption">
+          <h3>الأمسيات والمسابقات الثقافية</h3>
+          <p>تنظيم المسابقات المعرفية واللقاءات الثقافية لتعزيز الوعي الشبابي.</p>
+        </div>
+      </article>
+
+      <article class="event-photo-card" data-category="culture">
+        <div class="photo-frame" onclick="openLightbox(this)">
+          <span class="committee-tag">اللجنة الثقافية والاجتماعية</span>
+          <img src="culture2.jpg" alt="المبادرات المجتمعية" data-base="culture2" onerror="handleImgFallback(this)" />
+          <div class="photo-placeholder">
+            <span>صورة اللجنة الثقافية والاجتماعية (2)</span>
+            <code>culture2.jpg</code>
+          </div>
+        </div>
+        <div class="photo-caption">
+          <h3>المبادرات المجتمعية والتطوعية</h3>
+          <p>خدمة المجتمع المحلي والمشاركة في الحملات الاجتماعية بالولاية.</p>
+        </div>
+      </article>
+
+      <!-- 4. لجنة الأنشطة والفعاليات -->
+      <article class="event-photo-card" data-category="events">
+        <div class="photo-frame" onclick="openLightbox(this)">
+          <span class="committee-tag">لجنة الأنشطة والفعاليات</span>
+          <img src="events1.jpg" alt="تنظيم الملتقيات والاحتفالات" data-base="events1" onerror="handleImgFallback(this)" />
+          <div class="photo-placeholder">
+            <span>صورة لجنة الأنشطة والفعاليات (1)</span>
+            <code>events1.jpg</code>
+          </div>
+        </div>
+        <div class="photo-caption">
+          <h3>الملتقيات والمناسبات الوطنية</h3>
+          <p>تنظيم الفعاليات والاحتفالات التي تجمع منتسبي الفريق وأهالي الولاية.</p>
+        </div>
+      </article>
+
+      <article class="event-photo-card" data-category="events">
+        <div class="photo-frame" onclick="openLightbox(this)">
+          <span class="committee-tag">لجنة الأنشطة والفعاليات</span>
+          <img src="events2.jpg" alt="البرامج الترفيهية والرحلات" data-base="events2" onerror="handleImgFallback(this)" />
+          <div class="photo-placeholder">
+            <span>صورة لجنة الأنشطة والفعاليات (2)</span>
+            <code>events2.jpg</code>
+          </div>
+        </div>
+        <div class="photo-caption">
+          <h3>البرامج الترفيهية والرحلات الجماعية</h3>
+          <p>أنشطة تفاعلية تعزز روح الأخوة والترابط بين أعضاء الفريق.</p>
+        </div>
+      </article>
     </div>
   </section>
+
+  <!-- نافذة عرض الصورة بالحجم الكامل -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <div class="lightbox-box">
+      <button class="lightbox-close" onclick="closeLightbox(event, true)" aria-label="إغلاق">✕</button>
+      <img id="lightboxImg" src="" alt="" />
+      <div class="lightbox-info">
+        <h4 id="lightboxTitle"></h4>
+      </div>
+    </div>
+  </div>
 
   <!-- التذييل -->
   <footer>
@@ -758,6 +1071,7 @@
   </footer>
 
   <script>
+    // قائمة الجوال
     const menuToggle = document.getElementById('menuToggle');
     const mainNav = document.getElementById('mainNav');
 
@@ -770,6 +1084,58 @@
         mainNav.classList.remove('active');
       });
     });
+
+    // تصفية الصور حسب اللجنة
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const photoCards = document.querySelectorAll('.event-photo-card');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.getAttribute('data-filter');
+        photoCards.forEach(card => {
+          if (filter === 'all' || card.getAttribute('data-category') === filter) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+
+    // تجربة صيغ الصور تلقائياً (jpg ثم jpeg ثم png) قبل إظهار الصندوق البديل
+    function handleImgFallback(img) {
+      const base = img.getAttribute('data-base');
+      const attempt = parseInt(img.getAttribute('data-attempt') || '0', 10);
+      const exts = ['.jpeg', '.png'];
+
+      if (attempt < exts.length) {
+        img.setAttribute('data-attempt', attempt + 1);
+        img.src = base + exts[attempt];
+      } else {
+        img.style.display = 'none';
+        img.nextElementSibling.style.display = 'flex';
+      }
+    }
+
+    // فتح وإغلاق نافذة تكبير الصورة
+    function openLightbox(frame) {
+      const img = frame.querySelector('img');
+      if (!img || img.style.display === 'none') return;
+
+      const title = frame.parentElement.querySelector('h3').textContent;
+      document.getElementById('lightboxImg').src = img.src;
+      document.getElementById('lightboxTitle').textContent = title;
+      document.getElementById('lightbox').classList.add('open');
+    }
+
+    function closeLightbox(e, force = false) {
+      if (force || e.target.id === 'lightbox') {
+        document.getElementById('lightbox').classList.remove('open');
+      }
+    }
   </script>
 </body>
 </html>
