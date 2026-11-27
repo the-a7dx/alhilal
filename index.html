@@ -158,20 +158,26 @@
       list-style: none;
       display: flex;
       align-items: center;
-      gap: 1.35rem;
+      gap: 0.95rem;
     }
 
-    nav a {
+    nav a,
+    nav button.nav-link-btn {
+      background: none;
+      border: none;
+      font-family: 'Cairo', sans-serif;
       text-decoration: none;
       color: var(--text-dark);
       font-weight: 700;
-      font-size: 0.94rem;
-      padding: 0.42rem 0.85rem;
+      font-size: 0.92rem;
+      padding: 0.42rem 0.78rem;
       border-radius: 12px;
+      cursor: pointer;
       transition: all 0.2s ease;
     }
 
-    nav a:hover {
+    nav a:hover,
+    nav button.nav-link-btn:hover {
       color: var(--blue-glass-accent);
       background: rgba(34, 118, 204, 0.09);
     }
@@ -194,7 +200,7 @@
     /* ================= الواجهة الرئيسية ================= */
     .hero {
       position: relative;
-      padding: 4.2rem 1.25rem 3.5rem;
+      padding: 4rem 1.25rem 3.2rem;
       text-align: center;
       overflow: hidden;
     }
@@ -259,13 +265,13 @@
         0 14px 34px rgba(34, 118, 204, 0.10),
         inset 0 1.5px 1px rgba(255, 255, 255, 1);
       border-radius: 24px;
-      padding: 1.5rem 1.8rem;
-      margin-bottom: 2.1rem;
+      padding: 1.45rem 1.8rem;
+      margin-bottom: 1.9rem;
     }
 
     .intro-box p {
       color: var(--text-muted);
-      font-size: 1.05rem;
+      font-size: 1.04rem;
     }
 
     .intro-box strong {
@@ -277,6 +283,7 @@
       width: 100%;
       display: flex;
       justify-content: center;
+      margin-bottom: 1.65rem;
     }
 
     .ios-glass-dock {
@@ -392,6 +399,354 @@
 
     .ios-glass-icon:hover::before {
       background: linear-gradient(180deg, rgba(255, 255, 255, 0.42), rgba(255, 255, 255, 0));
+    }
+
+    /* ================= صفا أزرار المدرسة الكروية والمتجر الإلكتروني ================= */
+    .initiatives-grid {
+      width: 100%;
+      max-width: 720px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.15rem;
+      margin-top: 0.25rem;
+    }
+
+    .initiative-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .initiative-btn {
+      position: relative;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.85rem;
+      padding: 0.82rem 1.05rem;
+      border-radius: 22px;
+      font-family: 'Cairo', sans-serif;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.24s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.24s ease;
+    }
+
+    .btn-academy {
+      background: linear-gradient(145deg, rgba(232, 245, 255, 0.92), rgba(188, 224, 255, 0.58));
+      backdrop-filter: blur(20px) saturate(190%);
+      -webkit-backdrop-filter: blur(20px) saturate(190%);
+      border: 1.4px solid rgba(255, 255, 255, 0.98);
+      color: var(--blue-deep);
+      box-shadow:
+        0 12px 28px rgba(34, 118, 204, 0.15),
+        inset 0 1.5px 1px rgba(255, 255, 255, 1),
+        inset 0 -1.5px 3px rgba(34, 118, 204, 0.14);
+    }
+
+    .btn-store {
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.94), rgba(226, 241, 255, 0.52));
+      backdrop-filter: blur(20px) saturate(190%);
+      -webkit-backdrop-filter: blur(20px) saturate(190%);
+      border: 1.4px solid rgba(255, 255, 255, 0.98);
+      color: var(--blue-deep);
+      box-shadow:
+        0 12px 28px rgba(34, 118, 204, 0.13),
+        inset 0 1.5px 1px rgba(255, 255, 255, 1),
+        inset 0 -1.5px 3px rgba(34, 118, 204, 0.10);
+    }
+
+    .initiative-btn:hover {
+      transform: translateY(-4px);
+      box-shadow:
+        0 18px 36px rgba(34, 118, 204, 0.22),
+        inset 0 1.5px 1px rgba(255, 255, 255, 1);
+    }
+
+    .initiative-btn-right {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      text-align: right;
+    }
+
+    /* إطار الشعار المرفوع داخل الزر */
+    .initiative-logo-box {
+      position: relative;
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(226, 242, 255, 0.72));
+      border: 1.2px solid rgba(255, 255, 255, 1);
+      box-shadow:
+        0 6px 15px rgba(34, 118, 204, 0.16),
+        inset 0 1px 1px #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .initiative-logo-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 11px;
+    }
+
+    .logo-mini-fallback {
+      display: none;
+      font-size: 0.7rem;
+      font-weight: 800;
+      color: var(--blue-glass-accent);
+      text-align: center;
+      line-height: 1.2;
+    }
+
+    .initiative-title {
+      font-size: 1.04rem;
+      font-weight: 800;
+      color: var(--blue-deep);
+      line-height: 1.3;
+    }
+
+    .initiative-arrow {
+      width: 32px;
+      height: 32px;
+      border-radius: 11px;
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid rgba(34, 118, 204, 0.16);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--blue-glass-accent);
+      font-size: 0.92rem;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    /* الكلام التوضيحي أسفل كل زر */
+    .initiative-caption {
+      margin-top: 0.48rem;
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-align: center;
+      line-height: 1.5;
+      padding: 0 0.5rem;
+    }
+
+    /* ================= نافذة التعريف بالمدرسة الكروية (Glass Modal) ================= */
+    .academy-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 2100;
+      background: rgba(14, 36, 57, 0.55);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .academy-modal.open {
+      display: flex;
+    }
+
+    .academy-dialog {
+      position: relative;
+      width: 100%;
+      max-width: 720px;
+      max-height: 88vh;
+      overflow-y: auto;
+      border-radius: 28px;
+      background: linear-gradient(155deg, rgba(255, 255, 255, 0.96), rgba(232, 245, 255, 0.92));
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1.5px solid #ffffff;
+      box-shadow: 0 25px 60px rgba(14, 36, 57, 0.28);
+      padding: 1.75rem 1.5rem 2rem;
+      text-align: right;
+    }
+
+    .academy-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-bottom: 1rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid rgba(34, 118, 204, 0.16);
+    }
+
+    .academy-header-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .academy-header-logo {
+      width: 58px;
+      height: 58px;
+      border-radius: 17px;
+      background: linear-gradient(145deg, #ffffff, #e6f3ff);
+      border: 1.2px solid rgba(34, 118, 204, 0.2);
+      padding: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 18px rgba(34, 118, 204, 0.16);
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .academy-header-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 11px;
+    }
+
+    .academy-header h2 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--blue-deep);
+    }
+
+    .modal-close-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 13px;
+      border: 1px solid rgba(34, 118, 204, 0.2);
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--blue-deep);
+      font-size: 1.15rem;
+      font-weight: 800;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: background 0.2s ease;
+    }
+
+    .modal-close-btn:hover {
+      background: #e6f2fc;
+    }
+
+    .academy-block {
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(34, 118, 204, 0.14);
+      border-radius: 20px;
+      padding: 1.15rem 1.25rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 6px 18px rgba(34, 118, 204, 0.05);
+    }
+
+    .academy-block h3 {
+      font-size: 1.06rem;
+      font-weight: 800;
+      color: var(--blue-glass-accent);
+      margin-bottom: 0.4rem;
+    }
+
+    .academy-block p {
+      font-size: 0.95rem;
+      color: var(--text-dark);
+      line-height: 1.8;
+    }
+
+    .academy-two-cols {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .academy-two-cols .academy-block {
+      margin-bottom: 0;
+    }
+
+    .academy-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+      margin-top: 0.35rem;
+    }
+
+    .academy-list li {
+      font-size: 0.94rem;
+      color: var(--text-dark);
+      padding-right: 1.2rem;
+      position: relative;
+    }
+
+    .academy-list li::before {
+      content: "•";
+      position: absolute;
+      right: 0;
+      color: var(--blue-glass-accent);
+      font-weight: 800;
+      font-size: 1.15rem;
+    }
+
+    .values-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.45rem;
+    }
+
+    .value-pill {
+      padding: 0.3rem 0.85rem;
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(226, 242, 255, 0.9), rgba(196, 226, 255, 0.6));
+      border: 1px solid rgba(34, 118, 204, 0.18);
+      color: var(--blue-deep);
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
+
+    .academy-join-box {
+      background: linear-gradient(145deg, rgba(226, 242, 255, 0.85), rgba(196, 226, 255, 0.55));
+      border: 1.2px solid rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      padding: 1.25rem;
+    }
+
+    .academy-join-box h3 {
+      font-size: 1.08rem;
+      font-weight: 800;
+      color: var(--blue-deep);
+      margin-bottom: 0.35rem;
+    }
+
+    .academy-join-box p {
+      font-size: 0.95rem;
+      color: var(--text-dark);
+      margin-bottom: 0.75rem;
+    }
+
+    .academy-contact-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+    }
+
+    .contact-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.48rem 0.95rem;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(34, 118, 204, 0.2);
+      color: var(--blue-deep);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
     }
 
     /* ================= الأقسام العامة ================= */
@@ -541,7 +896,6 @@
       display: block;
     }
 
-    /* عدّاد الصور الزجاجي أعلى اليسار */
     .slide-counter {
       position: absolute;
       top: 12px;
@@ -560,7 +914,6 @@
       display: none;
     }
 
-    /* أسهم التنقل الزجاجية */
     .slider-arrow {
       position: absolute;
       top: 50%;
@@ -597,7 +950,6 @@
       left: 12px;
     }
 
-    /* نقاط المؤشر السفلية الزجاجية */
     .slider-dots {
       position: absolute;
       bottom: 12px;
@@ -630,7 +982,6 @@
       background: var(--blue-glass-accent);
     }
 
-    /* رسالة إرشادية داخل الخانة قبل رفع الصور */
     .slider-empty-state {
       position: absolute;
       inset: 0;
@@ -682,7 +1033,7 @@
     .lightbox {
       position: fixed;
       inset: 0;
-      z-index: 2000;
+      z-index: 2200;
       background: rgba(14, 36, 57, 0.68);
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
@@ -814,6 +1165,11 @@
         width: 100%;
         justify-content: center;
       }
+
+      .initiatives-grid,
+      .academy-two-cols {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -847,7 +1203,8 @@
           <li><a href="#home">الرئيسية</a></li>
           <li><a href="#about">عن الفريق</a></li>
           <li><a href="#committees">لجان الفريق</a></li>
-          <li><a href="#contact">التواصل</a></li>
+          <li><button type="button" class="nav-link-btn" onclick="openAcademyModal()">المدرسة الكروية</button></li>
+          <li><a href="https://www.instagram.com/h_burstore?hvrq=NXJpZXYxbGlwdWp6" target="_blank" rel="noopener noreferrer">المتجر</a></li>
         </ul>
       </nav>
     </div>
@@ -920,6 +1277,39 @@
               </svg>
             </a>
           </div>
+        </div>
+      </div>
+
+      <!-- صف أزرار مدرسة الهلال الكروية والمتجر الإلكتروني بصور الشعارات الخاصة بك -->
+      <div class="initiatives-grid">
+        <!-- 1. زر مدرسة الهلال الكروية -->
+        <div class="initiative-item">
+          <button type="button" class="initiative-btn btn-academy" onclick="openAcademyModal()">
+            <div class="initiative-btn-right">
+              <div class="initiative-logo-box">
+                <img src="academy-logo.png" alt="شعار مدرسة الهلال الكروية" data-base="academy-logo" onerror="handleLogoFallback(this)" />
+                <span class="logo-mini-fallback">المدرسة</span>
+              </div>
+              <span class="initiative-title">مدرسة الهلال الكروية</span>
+            </div>
+            <span class="initiative-arrow" aria-hidden="true">❮</span>
+          </button>
+          <p class="initiative-caption">التعريف بالمدرسة الكروية وبرامج تدريب وصقل مواهب الناشئين</p>
+        </div>
+
+        <!-- 2. زر المتجر الإلكتروني للفريق -->
+        <div class="initiative-item">
+          <a href="https://www.instagram.com/h_burstore?hvrq=NXJpZXYxbGlwdWp6" target="_blank" rel="noopener noreferrer" class="initiative-btn btn-store">
+            <div class="initiative-btn-right">
+              <div class="initiative-logo-box">
+                <img src="store-logo.png" alt="شعار متجر فريق الهلال" data-base="store-logo" onerror="handleLogoFallback(this)" />
+                <span class="logo-mini-fallback">المتجر</span>
+              </div>
+              <span class="initiative-title">متجر الفريق</span>
+            </div>
+            <span class="initiative-arrow" aria-hidden="true">↗</span>
+          </a>
+          <p class="initiative-caption">المتجر الإلكتروني الرسمي لأطقم ومنتجات فريق الهلال البريمي</p>
         </div>
       </div>
     </div>
@@ -1051,6 +1441,76 @@
     </div>
   </section>
 
+  <!-- نافذة التعريف بمدرسة الهلال الكروية -->
+  <div class="academy-modal" id="academyModal" onclick="closeAcademyModal(event)">
+    <div class="academy-dialog" role="dialog" aria-modal="true" aria-labelledby="academyModalTitle">
+      <div class="academy-header">
+        <div class="academy-header-brand">
+          <div class="academy-header-logo">
+            <img src="academy-logo.png" alt="شعار مدرسة الهلال الكروية" data-base="academy-logo" onerror="handleLogoFallback(this)" />
+            <span class="logo-mini-fallback">المدرسة</span>
+          </div>
+          <h2 id="academyModalTitle">مدرسة الهلال الكروية</h2>
+        </div>
+        <button type="button" class="modal-close-btn" onclick="closeAcademyModal(event, true)" aria-label="إغلاق">✕</button>
+      </div>
+
+      <div class="academy-block">
+        <h3>من نحن</h3>
+        <p>
+          مدرسة الهلال الكروية أكاديمية رياضية متخصصة في تعليم كرة القدم للناشئين في ولاية البريمي بسلطنة عُمان. نؤمن بأن كل طفل يحمل موهبة تستحق أن تُكتشف وتُصقل، ونعمل على أن نمنحه بيئة آمنة ومحفّزة يتعلم فيها اللعبة بأسلوب علمي ممتع.
+        </p>
+      </div>
+
+      <div class="academy-two-cols">
+        <div class="academy-block">
+          <h3>رسالتنا</h3>
+          <p>
+            بناء جيل من اللاعبين الواعدين يتقنون أساسيات كرة القدم، ويتحلّون بالانضباط والروح الرياضية، ليكونوا نماذج مشرّفة في الملعب وخارجه.
+          </p>
+        </div>
+
+        <div class="academy-block">
+          <h3>رؤيتنا</h3>
+          <p>
+            أن نكون المدرسة الكروية الأولى للناشئين في ولاية البريمي، ومصدرًا لتخريج مواهب تمثّل الأندية والمنتخبات الوطنية بكل فخر.
+          </p>
+        </div>
+      </div>
+
+      <div class="academy-block">
+        <h3>لماذا مدرسة الهلال؟</h3>
+        <ul class="academy-list">
+          <li><strong>تدريب احترافي:</strong> مدربون مؤهلون يعتمدون برامج تدريبية مناسبة لكل مرحلة عمرية.</li>
+          <li><strong>تطوير شامل:</strong> نركّز على المهارات الفنية واللياقة البدنية والفهم التكتيكي للعبة.</li>
+          <li><strong>بيئة آمنة وداعمة:</strong> نحرص على سلامة اللاعبين وراحتهم، ونشجّعهم على الثقة بالنفس والتعلّم من التجربة.</li>
+          <li><strong>غرس القيم:</strong> الالتزام والاحترام والعمل بروح الفريق جزء أساسي من برنامجنا.</li>
+        </ul>
+      </div>
+
+      <div class="academy-block">
+        <h3>قيمنا</h3>
+        <div class="values-pills">
+          <span class="value-pill">الانضباط</span>
+          <span class="value-pill">الاحترام</span>
+          <span class="value-pill">الشغف</span>
+          <span class="value-pill">العمل الجماعي</span>
+          <span class="value-pill">المثابرة</span>
+        </div>
+      </div>
+
+      <div class="academy-join-box">
+        <h3>انضم إلينا</h3>
+        <p>ابدأ مع ابنك رحلته نحو عالم كرة القدم. في مدرسة الهلال الكروية نصنع اللاعب ونبني الإنسان.</p>
+        <p style="font-weight: 700; color: var(--blue-deep); margin-bottom: 0.4rem;">للتسجيل والاستفسار:</p>
+        <div class="academy-contact-meta">
+          <a href="tel:+96893973475" class="contact-chip">📞 رقم التواصل: 93973475</a>
+          <span class="contact-chip">📍 الموقع: ولاية البريمي، سلطنة عُمان</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- نافذة عرض الصورة بالحجم الكامل -->
   <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
     <div class="lightbox-box">
@@ -1076,13 +1536,43 @@
       mainNav.classList.toggle('active');
     });
 
-    document.querySelectorAll('#mainNav a').forEach(link => {
-      link.addEventListener('click', () => {
+    document.querySelectorAll('#mainNav a, #mainNav button').forEach(item => {
+      item.addEventListener('click', () => {
         mainNav.classList.remove('active');
       });
     });
 
-    // التحقق من وجود الصورة بصيغة jpg أو jpeg أو png
+    // تجربة صيغ الشعارات تلقائياً (png ثم jpg ثم jpeg)
+    function handleLogoFallback(img) {
+      const base = img.getAttribute('data-base');
+      const attempt = parseInt(img.getAttribute('data-attempt') || '0', 10);
+      const exts = ['.jpg', '.jpeg'];
+
+      if (attempt < exts.length) {
+        img.setAttribute('data-attempt', attempt + 1);
+        img.src = base + exts[attempt];
+      } else {
+        img.style.display = 'none';
+        if (img.nextElementSibling) {
+          img.nextElementSibling.style.display = 'block';
+        }
+      }
+    }
+
+    // نافذة مدرسة الهلال الكروية
+    function openAcademyModal() {
+      document.getElementById('academyModal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeAcademyModal(e, force = false) {
+      if (force || e.target.id === 'academyModal') {
+        document.getElementById('academyModal').classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // التحقق من وجود صور اللجان بصيغة jpg أو jpeg أو png
     function resolveImage(baseName) {
       const exts = ['.jpg', '.jpeg', '.png'];
       return new Promise(resolve => {
@@ -1181,7 +1671,6 @@
           restartTimer();
         });
 
-        // السحب باللمس على الجوال والآيباد
         let touchStartX = 0;
         viewport.addEventListener('touchstart', e => {
           touchStartX = e.changedTouches[0].screenX;
